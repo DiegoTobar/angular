@@ -1,24 +1,19 @@
 <style>
-    /* .centro{
+    .centro{
         text-align:block;
         align-items: block
-    }*/
-    .bgcolorheadercard{ 
+    }
+    .bgcolorheadercard{
         background-color: purple;
     }
 </style>
-
-<div class="container">
-    <div class="container-fluid">
-    
-<div class="row">
-    <div class="col-md-4"></div>
-    <div class="col-md-4">
-        <a href="#" routerLink="/productos/agregar"><button id="nuevoP" class="btn btn-success btn-block "><i class="fa fa-plus" aria-hidden="false"></i>   Nuevo Producto</button></a>
+    <div class="centro col-md-12 mt-4">
+    <a href="#" routerLink="/productos/agregar"><button id="nuevoP" class="btn btn-success btn-block "><i class="fa fa-plus" aria-hidden="false"></i>   Nuevo Producto</button></a>
     </div>
-</div>
-<br>
-<br>
+    <br>
+    <br>
+    <br>
+    <br>
 
 <div class="col-md-4" *ngFor="let producto of productos">
     <div class="card text-center">
@@ -37,6 +32,4 @@
             <a [routerLink]="['/productos/editar',producto.idArticulo]" id="editar" class="btn btn-warning btn-block"><i class="fa fa-floppy-o" aria-hidden="false"></i>    Editar</a>
         </div>
     </div>
-</div>
-</div>
 </div>

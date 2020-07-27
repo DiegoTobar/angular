@@ -12,11 +12,11 @@ export class AgregarproductosComponent implements OnInit {
   producto: Producto = {
     idArticulo: 0,
     nombre: '',
-    precio: '',
-    referencia: '',
+    precio: null,
+    categoria: '',
     descuento: 0,
     imagen: '',
-    stock: 0,
+    stock: null,
     descripcion: ''
 
   };

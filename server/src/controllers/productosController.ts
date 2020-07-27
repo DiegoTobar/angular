@@ -7,18 +7,18 @@ import pool from '../database';
 class ProductosController {
 
     public async list(req: Request, res: Response): Promise<void> {
-        const producto = await pool.query('SELECT * FROM productos');
+        const producto = await pool.query('SELECT categorias.nombre as categoria, descripcion, descuento, imagen, productos.nombre, precio, stock FROM productos join categorias on Categorias_idCategoria = idCategoria');
         res.json(producto);
     }
 
     public async getOne(req: Request, res: Response): Promise<any> {
         const { id } = req.params;
-        const producto = await pool.query('SELECT * FROM productos WHERE idArticulo = ?', [id]);
+        const producto = await pool.query('SELECT categorias.nombre as categoria, descripcion, descuento, imagen, productos.nombre, precio, stock FROM productos join categorias on Categorias_idCategoria = idCategoria WHERE idArticulo = ?', [id]);
         console.log(producto.length);
         if (producto.length > 0) {
             return res.json(producto[0]);
         }
-        res.status(404).json({ text: "The producto no existe" });
+        res.status(404).json({ text: "El producto no existe" });
     }
 
     public async create(req: Request, res: Response): Promise<void> {

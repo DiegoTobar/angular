@@ -5,6 +5,8 @@ import { ProductosComponent } from "./componentes/productos/productos.component"
 import { UsuariosComponent } from "./componentes/usuarios/usuarios.component";
 import { AgregarproductosComponent } from "./componentes/agregarproductos/agregarproductos.component";
 import { AdminComponent} from "./componentes/admin/admin.component";
+import { PrincipalComponent } from "./componentes/principal/principal.component";
+import { CarroComponent} from "./componentes/carro/carro.component";
 import { from } from 'rxjs';
 
 const routes: Routes = [
@@ -12,8 +14,9 @@ const routes: Routes = [
   { path: "productos/agregar", component: AgregarproductosComponent },
   { path: "usuarios", component: UsuariosComponent },
   { path: "admin", component: AdminComponent },
-  { path: "productos/editar/:idArticulo", component: AgregarproductosComponent}
-
+  { path: "", component: PrincipalComponent },
+  { path: "productos/editar/:idArticulo", component: AgregarproductosComponent},
+  { path: "carro", component: CarroComponent }
 ];
 
 @NgModule({

@@ -1,4 +1,4 @@
-export interface Producto {
+export interface IItem {    
     idArticulo?: number;
     nombre?: string;
     precio?: number;

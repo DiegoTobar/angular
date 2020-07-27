@@ -1,0 +1,40 @@
+<style>
+    .centro {
+        text-align: block;
+        align-items: block
+    }
+
+    .bgcolorheadercard {
+        background-color: #5633b8;
+        ;
+    }
+</style>
+
+
+
+<div class="container">
+    <div class="col-md-4" *ngFor="let producto of productos">
+        <div class="card text-center" style="width: 12rem;">
+            <div class="card-header bgcolorheadercard text-white d-flex justify-content-between align-items-center">
+                <b>{{producto.nombre}}</b>
+                <button class="btn btn-outline-light" (click)="borrarProducto(producto.idArticulo)">
+                    <i class="far fa-trash-alt"></i>
+                </button>
+            </div>
+            <div class="card-body" style="width: 12rem;">
+                <img src="{{producto.imagen}}" class="card-img-top" style="box-sizing: content-box;">
+                <p>Categoria: {{ producto.categoria}}</p>
+                <p>Precio: {{ producto.precio}}</p>
+                <p>Disponibles: {{ producto.stock}}</p>
+                <p>{{producto.descripcion}} </p>
+
+                <div class="alert alert-light" role="alert">
+                    <a [routerLink]="['/principal/comprar',producto.idArticulo]" 
+                       (click)="carro()" class="btn btn-outline-success btn-block" id="carro"><i
+                            class="fas fa-cart-arrow-down"></i> Comprar</a>
+                </div>
+            </div>
+            <!-- <app-cart *ngIf="openCart"></app-cart> -->
+        </div>
+    </div>
+</div>

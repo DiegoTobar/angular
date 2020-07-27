@@ -10,6 +10,8 @@ import { UsuariosComponent } from './componentes/usuarios/usuarios.component';
 import { AgregarproductosComponent } from './componentes/agregarproductos/agregarproductos.component';
 import { AdminComponent } from './componentes/admin/admin.component';
 import { ProductosService } from './services/productos.service';
+import { PrincipalComponent } from './componentes/principal/principal.component';
+import { CarroComponent } from './componentes/carro/carro.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { ProductosService } from './services/productos.service';
     ProductosComponent,
     UsuariosComponent,
     AgregarproductosComponent,
-    AdminComponent
+    AdminComponent,
+    PrincipalComponent,
+    CarroComponent
   ],
   imports: [
     BrowserModule,

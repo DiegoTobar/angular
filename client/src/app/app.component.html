@@ -1,12 +1,3 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
 <style>
   :host {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -62,7 +53,7 @@
 
   .content {
     display: flex;
-    margin: 96px auto 32px;
+    margin: 76px auto 32px;
     padding: 0 16px;
     max-width: 960px;
     flex-direction: column;
@@ -194,7 +185,7 @@
   }
 
   .terminal pre {
-    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
     color: white;
     padding: 0 1rem 1rem;
     margin: 0;
@@ -238,17 +229,17 @@
     align-items: center;
     font-size: 12px;
     padding: 3px 10px;
-    border: 1px solid rgba(27,31,35,.2);
+    border: 1px solid rgba(27, 31, 35, .2);
     border-radius: 3px;
-    background-image: linear-gradient(-180deg,#fafbfc,#eff3f6 90%);
+    background-image: linear-gradient(-180deg, #fafbfc, #eff3f6 90%);
     margin-left: 4px;
     font-weight: 600;
-    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   }
 
   .github-star-badge:hover {
-    background-image: linear-gradient(-180deg,#f0f3f6,#e6ebf1 90%);
-    border-color: rgba(27,31,35,.35);
+    background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%);
+    border-color: rgba(27, 31, 35, .35);
     background-position: -.5em;
   }
 
@@ -270,7 +261,7 @@
   /* Responsive Styles */
   @media screen and (max-width: 767px) {
 
-    .card-container > *:not(.circle-link) ,
+    .card-container>*:not(.circle-link),
     .terminal {
       width: 100%;
     }
@@ -303,32 +294,37 @@
   <div class="logos">
     <a href="/"><img src="..\assets\images\logo.png" alt="#" /></a>
   </div>
-  
+
   <div class="col-xl-9 col-lg-9 col-md-8 col-sm-3">
     <nav class="navigation navbar navbar-expand-md navbar-dark ">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04"
+        aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarsExample04">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item"> <!-- class="nav-item active" -->
+          <li class="nav-item">
+            <!-- class="nav-item active" -->
             <a class="nav-link" routerLink="./admin" class="nav-link"><i class="fas fa-home"></i> Admin</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="#" routerLink="./productos"><i class="fas fa-box-open"></i> Productos</a>
+            <a class="nav-link" href="#" routerLink="./productos"><i class="fas fa-box-open"></i> Productos</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="#" routerLink="./usuarios"><i class="fas fa-users-cog"></i> Usuarios</a>
+            <a class="nav-link" href="#" routerLink="./usuarios"><i class="fas fa-users-cog"></i> Usuarios</a>
           </li>
-          <li class="nav-item" >
+          <li class="nav-item">
             <a class="nav-link" routerLink="./logout">Usuario </a>
           </li>
-          <li class="nav-item d_none" >
-              <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+          <li class="nav-item d_none">
+            <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+          </li>
+          <li class="nav-item d_none">
+            <a class="nav-link" href="#" routerLink="./carro"><i class="fas fa-shopping-cart"></i></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="./logout" data-toggle="tooltip"  data-placement="down" title="Salir">
-                <i class="fas fa-sign-out-alt"></i></a>
+            <a class="nav-link" routerLink="./logout" data-toggle="tooltip" data-placement="down" title="Salir">
+              <i class="fas fa-sign-out-alt"></i></a>
           </li>
         </ul>
       </div>
@@ -337,4 +333,3 @@
 </div>
 <div class="content"></div>
 <router-outlet></router-outlet>
-

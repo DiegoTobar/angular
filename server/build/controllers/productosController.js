@@ -16,19 +16,19 @@ const database_1 = __importDefault(require("../database"));
 class ProductosController {
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const producto = yield database_1.default.query('SELECT * FROM productos');
+            const producto = yield database_1.default.query('SELECT categorias.nombre as categoria, descripcion, descuento, imagen, productos.nombre, precio, stock FROM productos join categorias on Categorias_idCategoria = idCategoria');
             res.json(producto);
         });
     }
     getOne(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            const producto = yield database_1.default.query('SELECT * FROM productos WHERE idArticulo = ?', [id]);
+            const producto = yield database_1.default.query('SELECT categorias.nombre as categoria, descripcion, descuento, imagen, productos.nombre, precio, stock FROM productos join categorias on Categorias_idCategoria = idCategoria WHERE idArticulo = ?', [id]);
             console.log(producto.length);
             if (producto.length > 0) {
                 return res.json(producto[0]);
             }
-            res.status(404).json({ text: "The producto no existe" });
+            res.status(404).json({ text: "El producto no existe" });
         });
     }
     create(req, res) {
