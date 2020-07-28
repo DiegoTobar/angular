@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'tiendaonline';
+
+  public openCart:boolean = false;
+  public carro(){ //Se usa para abrir o cerrar el carrito
+    this.openCart = !this.openCart;
+  }
 }

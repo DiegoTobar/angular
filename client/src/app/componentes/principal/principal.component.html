@@ -29,9 +29,8 @@
                 <p>{{producto.descripcion}} </p>
 
                 <div class="alert alert-light" role="alert">
-                    <a [routerLink]="['/principal/comprar',producto.idArticulo]" 
-                       (click)="carro()" class="btn btn-outline-success btn-block" id="carro"><i
-                            class="fas fa-cart-arrow-down"></i> Comprar</a>
+                    <a href="#" (click)="addCarro(producto)" class="btn btn-outline-success btn-block" id="carro">
+                        <i class="fas fa-cart-arrow-down"></i> Comprar</a>
                 </div>
             </div>
             <!-- <app-cart *ngIf="openCart"></app-cart> -->

@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: "admin", component: AdminComponent },
   { path: "", component: PrincipalComponent },
   { path: "productos/editar/:idArticulo", component: AgregarproductosComponent},
-  { path: "carro", component: CarroComponent }
+  // { path: "carro", component: CarroComponent }
 ];
 
 @NgModule({

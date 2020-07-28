@@ -7,12 +7,12 @@ import { IItem } from '../models/Interface';
 })
 export class CartService {
 
-  private cart = new BehaviorSubject<Array<IItem>>(null); //Definimos nuestro BehaviorSubject, este debe tener un valor inicial siempre
-  public currentDataCart$ = this.cart.asObservable(); //Tenemos un observable con el valor actual del BehaviourSubject
+  private carro = new BehaviorSubject<Array<IItem>>(null); //Definimos nuestro BehaviorSubject, este debe tener un valor inicial siempre
+  public productosCarro$ = this.carro.asObservable(); //Tenemos un observable con el valor actual del BehaviourSubject
   constructor() { }
   public changeCart(newData: IItem) {
     //Obtenemos el valor actual
-    let listCart = this.cart.getValue();
+    let listCart = this.carro.getValue();
     //Si no es el primer item del carrito
     if (listCart) {
       //Buscamos si ya cargamos ese item en el carrito
@@ -31,11 +31,11 @@ export class CartService {
       listCart = [];
       listCart.push(newData);
     }
-    this.cart.next(listCart); //Enviamos el valor a todos los Observers que estan escuchando nuestro Observable
+    this.carro.next(listCart); //Enviamos el valor a todos los Observers que estan escuchando nuestro Observable
   }
   public removeElementCart(newData: IItem) {
     //Obtenemos el valor actual de carrito
-    let listCart = this.cart.getValue();
+    let listCart = this.carro.getValue();
     //Buscamos el item del carrito para eliminar
     let objIndex = listCart.findIndex((obj => obj.idArticulo == newData.idArticulo));
     if (objIndex != -1) {
@@ -44,6 +44,6 @@ export class CartService {
       //Eliminamos el item del array del carrito
       listCart.splice(objIndex, 1);
     }
-    this.cart.next(listCart); //Enviamos el valor a todos los Observers que estan escuchando nuestro Observable
+    this.carro.next(listCart); //Enviamos el valor a todos los Observers que estan escuchando nuestro Observable
   }
 }

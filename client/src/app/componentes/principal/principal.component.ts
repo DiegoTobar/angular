@@ -39,7 +39,4 @@ export class PrincipalComponent implements OnInit {
         err => console.error(err)
       )
   }
-  public addCart(producto: IItem){
-
-  }
 }
