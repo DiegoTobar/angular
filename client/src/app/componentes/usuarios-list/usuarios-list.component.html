@@ -1,0 +1,51 @@
+<p>usuarios-list works!</p>
+
+<style>
+  .previous {
+float: left;
+}
+
+.next {
+float: right;
+}
+</style>
+
+<div class="col-md-6 container" >
+
+<div class="table-responsive-lg table-light">
+  <table class="table table-bordered table-hover ">
+    <thead>
+      <tr>
+        <th scope="col">Cedula</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Correo</th>
+        <th scope="col">Rol</th>
+        <th scope="col">Telefono</th>
+        <th scope="col-2">opciones</th>
+    </tr>
+    </thead>
+    <tbody *ngFor="let user of users">
+      <tr>        
+        <td>{{ user.cedula}}</td>
+        <td>{{ user.nombre}}</td>
+        <td>{{ user.apellido}}</td>
+        <td>{{ user.correo}}</td>
+        <td>{{ user.rol}}</td>
+        <td>{{ user.telefono}}</td>
+        <td>
+          <div class="btn-group">
+          
+                  <button [routerLink]="['/usuarios/edit',user.cedula]" type="button" class="btn btn-info "  ><i class="far fa-edit" aria-hidden="false"></i>Edit</button>
+               
+                  <button type="button" class="btn btn-danger" (click)="deleteuser(user.cedula)" ><i class="far fa-trash-alt"></i></button>            
+          </div>    
+        </td>
+        
+        
+      </tr>
+      
+    </tbody>
+  </table>
+</div>
+</div>

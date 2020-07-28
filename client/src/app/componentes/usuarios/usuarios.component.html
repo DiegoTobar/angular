@@ -1,1 +1,41 @@
 <p>usuarios works!</p>
+<h1>Bienvenido</h1>
+<div class="container">
+    <form >
+        <div class="form-group form-control form-control-lg">
+            <h1 class="align-bottom">Registro</h1>
+            <table class="table table-striped" >
+                
+                <tr>
+                    <td>Cedula</td>
+                    <td><input name="cedula" [(ngModel)]="user.cedula" class="form-control"  id="id_user"type="number"></td>
+                </tr>
+                <tr>
+                    <td>Nombre</td>
+                    <td><input name="nombre" class="form-control" [(ngModel)]="user.nombre" id="id_user"type="text"></td>
+                </tr>
+                <tr>
+                    <td>Apellido</td>
+                    <td><input name="apellido" class="form-control" [(ngModel)]="user.apellido"  id="id_user"type="text"></td>
+                </tr>
+                <tr>
+                    <td>Correo</td>
+                    <td><input name="correo" class="form-control" [(ngModel)]="user.correo"  id="id_user" type="email"></td>
+                </tr>            
+                <tr>
+                    <td>Contraseña</td>
+                    <td><input name="contrasena"class="form-control" [(ngModel)]="user.contrasena"  id="id_password"type="password"></td>
+                </tr>
+                <tr>
+                    <td>Rol</td>
+                    <td><input name="rol" class="form-control" [(ngModel)]="user.rol"  id="id_user"type="text"></td>
+                </tr>
+                <tr>
+                    <td>Telefono</td>
+                    <td><input  name="telefono" class="form-control" [(ngModel)]="user.telefono" id="id_user"type="text"></td>
+                </tr>
+            </table>
+            <button class="btn btn-primary" (click)="edit ? updateUser() : saveNewUser()">Registrar</button>
+        </div>
+    </form>
+</div>
