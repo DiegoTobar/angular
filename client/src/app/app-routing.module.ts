@@ -5,6 +5,7 @@ import { ProductosComponent } from "./componentes/productos/productos.component"
 import { UsuariosComponent } from "./componentes/usuarios/usuarios.component";
 import { AgregarproductosComponent } from "./componentes/agregarproductos/agregarproductos.component";
 import { AdminComponent} from "./componentes/admin/admin.component";
+import { LoginComponent } from "./componentes/login/login.component";
 import { from } from 'rxjs';
 
 import { UsuariosListComponent } from "./componentes/usuarios-list/usuarios-list.component";
@@ -18,7 +19,9 @@ const routes: Routes = [
   { path: "productos/editar/:idArticulo", component: AgregarproductosComponent},
 
   { path: "usuarios/list",component: UsuariosListComponent},
-  { path: "usuarios/edit/:id",component: UsuariosComponent}
+  { path: "usuarios/edit/:id",component: UsuariosComponent},
+  { path: "usuarios/register",component: LoginComponent},
+  { path: "usuarios/login",component: LoginComponent}
 
 ];
 

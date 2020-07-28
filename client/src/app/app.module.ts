@@ -13,6 +13,7 @@ import { ProductosService } from './services/productos.service';
 import { UsuariosListComponent } from './componentes/usuarios-list/usuarios-list.component';
 
 import {UsuariosService} from './services/usuarios.service';
+import { LoginComponent } from './componentes/login/login.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {UsuariosService} from './services/usuarios.service';
     UsuariosComponent,
     AgregarproductosComponent,
     AdminComponent,
-    UsuariosListComponent
+    UsuariosListComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

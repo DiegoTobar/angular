@@ -17,6 +17,8 @@ class UserReg {
         this.router.post('/', userRegController.create);
         this.router.put('/:id',userRegController.update);
         this.router.delete('/:id',userRegController.delete);
+
+        this.router.post('/login/',userRegController.login);
         
 
     }

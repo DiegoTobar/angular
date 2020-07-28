@@ -16,6 +16,7 @@ class UserReg {
         this.router.post('/', userRegController_1.default.create);
         this.router.put('/:id', userRegController_1.default.update);
         this.router.delete('/:id', userRegController_1.default.delete);
+        this.router.post('/login/', userRegController_1.default.login);
     }
 }
 exports.default = new UserReg().router;

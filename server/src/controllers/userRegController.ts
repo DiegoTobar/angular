@@ -47,7 +47,14 @@ class UserRegController {
 
     }
 
+    public async login(req: Request, res: Response): Promise<void>{
+        //res.json({tex:'updating user' + req.params.id});
+        const { id } = req.params;
+        console.log(id);
+        const respuesta = await pool.query('select * from usuarios  WHERE cedula = ?',[id]);
+        res.json({respuesta});
 
+    }
     
     
 }

@@ -25,7 +25,7 @@ class Server {
     routes() {
         this.app.use('/', indexRoutes_1.default);
         this.app.use('/productos', productosRoutes_1.default);
-        this.app.use('/userReg', userRegRoutes_1.default);
+        this.app.use('/user', userRegRoutes_1.default);
     }
     start() {
         this.app.listen(this.app.get('port'), () => {

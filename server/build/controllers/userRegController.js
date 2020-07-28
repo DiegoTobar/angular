@@ -58,6 +58,15 @@ class UserRegController {
             res.json({ message: 'The user was updated' });
         });
     }
+    login(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            //res.json({tex:'updating user' + req.params.id});
+            const { id } = req.params;
+            console.log(id);
+            const respuesta = yield database_1.default.query('select * from usuarios  WHERE cedula = ?', [id]);
+            res.json({ respuesta });
+        });
+    }
 }
 const userRegController = new UserRegController;
 exports.default = userRegController;
