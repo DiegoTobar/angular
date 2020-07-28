@@ -16,7 +16,7 @@ const database_1 = __importDefault(require("../database"));
 class ProductosController {
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const producto = yield database_1.default.query('SELECT categorias.nombre as categoria, descripcion, descuento, imagen, productos.nombre, precio, stock FROM productos join categorias on Categorias_idCategoria = idCategoria');
+            const producto = yield database_1.default.query('SELECT idArticulo, categorias.nombre as categoria, descripcion, descuento, imagen, productos.nombre, precio, stock FROM productos join categorias on Categorias_idCategoria = idCategoria');
             res.json(producto);
         });
     }

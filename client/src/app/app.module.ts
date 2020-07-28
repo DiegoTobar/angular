@@ -12,6 +12,7 @@ import { AdminComponent } from './componentes/admin/admin.component';
 import { ProductosService } from './services/productos.service';
 import { PrincipalComponent } from './componentes/principal/principal.component';
 import { CarroComponent } from './componentes/carro/carro.component';
+import { DataTablesModule } from 'angular-datatables';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { CarroComponent } from './componentes/carro/carro.component';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    DataTablesModule
   ],
   providers: [ ProductosService],
   bootstrap: [AppComponent]

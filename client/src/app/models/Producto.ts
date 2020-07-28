@@ -7,4 +7,5 @@ export interface Producto {
     imagen ?: string;
     stock ?: number;
     descripcion ?: string;
+    cantCarro ?: number;
 }

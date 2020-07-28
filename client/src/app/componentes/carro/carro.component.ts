@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { IItem } from '../../models/Interface';
+import { Producto } from '../../models/Producto';
+import { Observable } from 'rxjs';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-carro',
@@ -7,14 +9,42 @@ import { IItem } from '../../models/Interface';
   styleUrls: ['./carro.component.less']
 })
 export class CarroComponent implements OnInit {
-  public items: Array<IItem>
+  public items: Array<Producto>;
+  dtOptions: DataTables.Settings = {};
+  public productoTotal: number = 0;
+  public facturaTotal: number = 0;
+  public cantidadTotal: number = 0;
+  constructor(private _cartService: CartService) { }
+  ngOnInit() {
+    this.dtOptions = {
+      pageLength: 10,
+      // buttons: [
+      //   'copy', 'excel', 'pdf'
+      // ],
+      language: {
+        url: '//cdn.datatables.net/plug-ins/1.10.21/i18n/Spanish.json'
+      }
+    };
 
-  constructor() { }
-
-  ngOnInit(): void {
+    this._cartService.currentDataCart$.subscribe(x => {
+      if (x) {
+        this.items = x;
+        this.cantidadTotal = x.length;
+        this.facturaTotal = x.reduce((sum, current) => sum + ((current.precio - current.descuento) * current.cantCarro), 0);
+      }
+    })
   }
-  public remove(producto: IItem) {
-    //Ya vamos a ver que hacemos acá
+  public remove(producto: Producto) {
+    console.log(producto)
+    this._cartService.removeElementCart(producto);
+  }
+  public add(producto: Producto) {
+    console.log(producto)
+    this._cartService.addCarro(producto);
+  }
+  public less(producto: Producto) {
+    console.log(producto)
+    this._cartService.lessCarro(producto);
   }
 
 }

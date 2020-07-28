@@ -1,21 +1,66 @@
-<div class="container">
+<!--<div class="container">
     <div class="shopping-cart">
       <div class="shopping-cart-header">
-        <!-- <i class="fa fa-shopping-cart cart-icon"></i><span class="badge">{{totalQuantity}}</span> -->
+        <i class="fa fa-shopping-cart cart-icon"></i><span class="badge">{{totalQuantity}}</span>
         <div class="shopping-cart-total">
           <span class="lighter-text">Total:</span>
-          <!-- <span class="main-color-text">${{totalPrice}}</span> -->
+          <span class="main-color-text">${{totalPrice}}</span>
         </div>
-      </div> <!--end shopping-cart-header -->
+      </div> 
       <ul class="shopping-cart-items">
         <li class="clearfix" *ngFor="let item of items">
           <img [src]="item.img" alt="item1" />
-          <span class="item-name">{{item.nombre}}</span>
-          <span class="item-price">${{item.precio}}</span>
-          <span class="item-quantity">Quantity: {{item.cantidad}}</span>
-          <button type="button" class="btn btn-danger ml-4" (click)="remove(item)">Eliminar</button>
+          <span class="item-name">Nombre: {{item.nombre}}</span>
+          <span class="item-price">Precio: {{item.precio}}</span>
+          <span class="item-quantity">Unidades: {{item.cantCarro}}</span>
+          <button type="button" class="btn btn-outline-danger ml-4 btn-sm" style="border: 0px;" (click)="remove(item)"><i class="fas fa-times-circle"></i></button>
         </li>
       </ul>
       <a href="#" class="button">Checkout</a>
-    </div> <!--end shopping-cart -->
-  </div> <!--end container -->
+    </div>
+  </div> -->
+
+
+
+<div class="container">
+  <table datatable [dtOptions]="dtOptions" class="row-border hover table-striped table-bordered">
+    <thead>
+      <tr>
+        <th align="center">Producto</th>
+        <th align="center">Unidades</th>
+        <th align="center">Valor</th>
+        <th align="center">Descuento</th>
+        <th align="center">Valor Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items">
+        <td><button type="button" class="btn btn-outline-danger ml-4 btn-sm" style="border: 0px;"
+            (click)="remove(item)"><i class="fas fa-times-circle"></i></button>{{ item.nombre }}</td>
+        <td align="center">
+          <div class="row">
+            <div class="col-md-4">
+              <button type="button" class="btn btn-outline-danger ml-4 btn-sm" style="border: 0px;"
+                (click)="less(item)">
+                <i class="fas fa-minus-circle"></i></button></div>
+            <div class="col-md-4"> {{ item.cantCarro }} </div>
+            <div class="col-md-4">
+              <button type="button" class="btn btn-outline-success ml-4 btn-sm" style="border: 0px;"
+                (click)="add(item)">
+                <i class="fas fa-plus-circle"></i></button>
+            </div>
+          </div>
+        </td>
+        <td align="center">{{ item.precio }}</td>
+        <td align="center">{{ item.descuento }}</td>
+        <td align="center">{{ item.precio * item.cantCarro}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="alert alert-success abs-center" style="justify-content: center;" role="alert">El total a pagar es de: ${{facturaTotal}}</div>
+  <div class="row">
+    <div class="col">
+      <div class="float-right"><button type="button" class="btn btn-success">Continuar con la Compra <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></div>
+    </div>
+  </div>
+</div>
