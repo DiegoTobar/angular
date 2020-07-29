@@ -12,8 +12,10 @@ class UserReg {
     }
     config() {
         this.router.get('/', userRegController_1.default.list);
-        this.router.get('/:id', userRegController_1.default.getOne);
-        this.router.post('/', userRegController_1.default.create);
+        // this.router.get('/:id', userRegController.getOne);
+        this.router.post('/login', userRegController_1.default.login);
+        this.router.post('/token', userRegController_1.default.getToken);
+        this.router.post('/reg', userRegController_1.default.create);
         this.router.put('/:id', userRegController_1.default.update);
         this.router.delete('/:id', userRegController_1.default.delete);
         this.router.post('/login/', userRegController_1.default.login);

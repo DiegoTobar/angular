@@ -16,10 +16,15 @@ import { CarroComponent } from './componentes/carro/carro.component';
 import { DataTablesModule } from 'angular-datatables';
 import { UsuariosListComponent } from './componentes/usuarios-list/usuarios-list.component';
 
-
-import {UsuariosService} from './services/usuarios.service';
+import { UsuariosService } from './services/usuarios.service';
 import { LoginComponent } from './componentes/login/login.component';
+<<<<<<< HEAD
 import { ComprasService } from './services/compras.service';
+=======
+import { RegistrarComponent } from './componentes/registrar/registrar.component';
+
+import { CookieService } from 'ngx-cookie-service';
+>>>>>>> sebastian2
 
 @NgModule({
   declarations: [
@@ -28,11 +33,11 @@ import { ComprasService } from './services/compras.service';
     UsuariosComponent,
     AgregarproductosComponent,
     AdminComponent,
-
     PrincipalComponent,
     CarroComponent,
     UsuariosListComponent,
-    LoginComponent
+    LoginComponent,
+    RegistrarComponent
   ],
   imports: [
     BrowserModule,
@@ -41,10 +46,15 @@ import { ComprasService } from './services/compras.service';
     FormsModule,
     DataTablesModule
   ],
-  providers: [ 
+  providers: [
     ProductosService,
+<<<<<<< HEAD
     UsuariosService,
     ComprasService
+=======
+    UsuariosService, 
+    CookieService
+>>>>>>> sebastian2
   ],
   bootstrap: [AppComponent]
 })

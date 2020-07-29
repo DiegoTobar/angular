@@ -58,10 +58,90 @@
       </tr>
     </tbody>
   </table>
-  <div class="alert alert-success abs-center" style="justify-content: center;" role="alert">El total a pagar es de: ${{facturaTotal}}</div>
+  <div class="alert alert-success abs-center" style="justify-content: center;" role="alert">El total a pagar es de:
+    ${{facturaTotal}}</div>
   <div class="row">
     <div class="col">
+
       <div class="float-right"><button type="button"  (click)="guardarNuevaCompra()" class="btn btn-success">Continuar con la Compra <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></div>
+
+      <a href="#" class="btn btn-success btn-xs pull-right" data-toggle="modal" data-target="#bookmarkModal">
+        Finalizar la Compra <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Bookmark form -->
+<div class="modal fade" id="bookmarkModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+            class="sr-only">Close</span></button>
+        <!-- <h4 class="modal-title" id="myModalLabel">Solo unos datos más...</h4> -->
+      </div>
+      <div class="modal-body">
+        <form id="datosFinales">
+
+          <div class="form-group">
+            <label for="ciudad">Ciudad:</label>
+            <div class="input-group">
+              <div class="input-group-addon">
+                <i class="glyphicon glyphicon-link"></i>
+              </div>
+              <select class="custom-select">
+                <option selected>Seleccione una ciudad...</option>
+                <option value="1">Cali</option>
+                <option value="2">Pasto</option>
+                <option value="3">Bogotá</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="direccion">Dirección:</label>
+            <div class="input-group">
+              <div class="input-group-addon">
+                <i class="glyphicon glyphicon-bookmark"></i>
+              </div>
+              <input ng-model="bookmark.direccion" id="direccion" class="form-control" type="text"
+                placeholder="Ingrese su dirección">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="pago">Método de Pago:</label>
+            <div class="input-group">
+              <div class="input-group-addon">
+                <i class="glyphicon glyphicon-link"></i>
+              </div>
+              <select class="custom-select">
+                <option selected>Seleccione uno...</option>
+                <option value="1">Tageta Débito</option>
+                <option value="2">Efectivo</option>
+                <option value="3">PSE</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="domicilio">Valor de Domicilio:</label>
+            <div class="input-group">
+              <div class="input-group-addon">
+                <i class="glyphicon glyphicon-link"></i>
+              </div>
+              <input ng-model="bookmark.domicilio" id="domicilio" class="form-control" type="text" placeholder="$ 5.000"
+                value="5000" disabled>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary">Comprar</button>
+      </div>
     </div>
   </div>
 </div>

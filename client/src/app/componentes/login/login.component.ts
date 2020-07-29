@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.less']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
+
 
   user: {
     cedula: 0,
@@ -16,10 +19,30 @@ export class LoginComponent implements OnInit {
     rol: 0,
     telefono:''
   };
+  correo: string;
+  contra: string;
 
-  constructor() { }
 
-  ngOnInit(): void {
+  constructor(public auth: AuthService, public router: Router) { }
+
+  login() {
+    const user = { correo: this.correo, contra: this.contra };
+    this.auth.loginUser(user).subscribe(data => {
+      console.log(data);
+      this.auth.setToken(data.token);
+      this.router.navigateByUrl('/');
+    },
+    error => {
+      console.log(error);alert("Usuario o contraseña Incorrectos");
+    });
+    // console.log("token:");
+    // console.log(this.auth.getUserLogged());
+    // if(console.error == 403)alert("Usuario o contraseña Incorrectos");
+  }
+  token(){
+    this.auth.getUserLogged().subscribe(data => {
+      console.log(data);
+    });
   }
 
 }

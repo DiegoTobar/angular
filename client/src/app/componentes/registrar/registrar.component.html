@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
+        <div class="card_register">
+            <div class="card">
+                <div class="card-body text-center">
+                    <form #formLogin="ngForm" >
+                        <h1 class="h3 mb-3 font-weight-normal">Completa tu Registro</h1>
+                        <div class="form-group">
+                            <input type="text" class="form-control" [(ngModel)]="nombre" name="nombre"
+                                placeholder="Nombre" required="required" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" [(ngModel)]="apellido" name="apellido"
+                                placeholder="Apellido" required="required" />
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" [(ngModel)]="correo" name="correo"
+                                placeholder="Correo" required="required" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" [(ngModel)]="telefono" name="telefono"
+                                placeholder="Telefono" required="required" />
+                        </div>
+                        <div class="form-group"> <input class="form-control" type="password" [(ngModel)]="contra"
+                                name="contra" placeholder="Contraseña" required="required" />
+                        </div>
+                        <div class="form-group"> <input class="form-control" type="password" [(ngModel)]="confirmContra"
+                                name="confirmContra" placeholder="Digite su contraseña nuevamente"
+                                required="required" />
+                        </div>
+                        
+                        <button type="submit" class="btn btn-outline-primary " (click)="registrar()">Registrarme</button>
+                        <div class="form-group">
+                            <a routerLink="/login" class="form-control login-user">Ya tengo una cuenta</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
