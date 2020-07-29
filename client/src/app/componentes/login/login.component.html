@@ -1,0 +1,25 @@
+<h1>Bienvenido</h1>
+<div class="container">
+    <form >
+        <div class="form-group form-control form-control-lg">
+            <h1 class="align-bottom">Registro</h1>
+            <table class="table table-striped" >
+                
+                <tr>
+                    <td>Correo</td>
+                    <td><input name="correo" class="form-control" [(ngModel)]="user.correo"  id="id_user" type="email"></td>
+                </tr>            
+                <tr>
+                    <td>Contraseña</td>
+                    <td><input name="contrasena"class="form-control" [(ngModel)]="user.contrasena"  id="id_password"type="password"></td>
+                </tr>
+            </table>
+            <button type="submit" class="btn btn-lg 
+            btn-block btn-primary" >Login </button>
+            <div class="form-group">
+                <a routerLink="/usuarios/registrar" class="form-control login-user">
+                Crear Cuenta</a>
+            </div>
+        </div>
+    </form>
+</div>

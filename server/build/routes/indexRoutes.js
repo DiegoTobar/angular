@@ -9,6 +9,7 @@ class IndexRoutes {
     }
     config() {
         this.router.get('/', indexController_1.indexController.index);
+        //this.router.get('/userReg',indexController.index);
     }
 }
 const indexRoutes = new IndexRoutes();

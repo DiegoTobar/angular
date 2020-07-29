@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { IItem } from '../models/Interface';
+import { Producto } from '../models/Producto';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
 
-  private carro = new BehaviorSubject<Array<IItem>>(null); //Definimos nuestro BehaviorSubject, este debe tener un valor inicial siempre
-  public productosCarro$ = this.carro.asObservable(); //Tenemos un observable con el valor actual del BehaviourSubject
+  private carro = new BehaviorSubject<Array<Producto>>(null); //Definimos nuestro BehaviorSubject, este debe tener un valor inicial siempre
+  public currentDataCart$ = this.carro.asObservable(); //Tenemos un observable con el valor actual del BehaviourSubject
   constructor() { }
-  public changeCart(newData: IItem) {
+  public addCarro(newData: Producto) {
     //Obtenemos el valor actual
     let listCart = this.carro.getValue();
     //Si no es el primer item del carrito
@@ -19,7 +19,7 @@ export class CartService {
       let objIndex = listCart.findIndex((obj => obj.idArticulo == newData.idArticulo));
       //Si ya cargamos uno aumentamos su cantidad
       if (objIndex != -1) {
-        listCart[objIndex].stock += 1;
+        listCart[objIndex].cantCarro += 1;
       }
       //Si es el primer item de ese tipo lo agregamos derecho al carrito
       else {
@@ -33,7 +33,24 @@ export class CartService {
     }
     this.carro.next(listCart); //Enviamos el valor a todos los Observers que estan escuchando nuestro Observable
   }
-  public removeElementCart(newData: IItem) {
+  public lessCarro(newData: Producto){
+    let listCart = this.carro.getValue();
+    if (listCart) {
+      let objIndex = listCart.findIndex((obj => obj.idArticulo == newData.idArticulo));
+      //Si ya cargamos uno aumentamos su cantidad
+      if (listCart[objIndex].cantCarro > 1) {
+        console.log("listCart")
+        console.log(listCart[objIndex].cantCarro)
+        listCart[objIndex].cantCarro -= 1;
+      }
+      //Si es el primer item de ese tipo lo agregamos derecho al carrito
+      else {
+        this.removeElementCart(newData)
+      }
+    }
+    this.carro.next(listCart);
+  }
+  public removeElementCart(newData: Producto) {
     //Obtenemos el valor actual de carrito
     let listCart = this.carro.getValue();
     //Buscamos el item del carrito para eliminar

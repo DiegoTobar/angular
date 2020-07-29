@@ -1,8 +1,7 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { ProductosService } from '../../services/productos.service';
+import { Producto } from '../../models/Producto';
 import { CartService } from '../../services/cart.service';
-import { IItem } from '../../models/Interface';
-
 
 @Component({
   selector: 'app-principal',
@@ -14,7 +13,7 @@ export class PrincipalComponent implements OnInit {
   productos: any = [];
   imprimir: string;
 
-  constructor(private productosService: ProductosService) { }
+  constructor(private productosService: ProductosService, private _cartService:CartService) { }
 
   ngOnInit() {
     this.getProductos();
@@ -38,5 +37,11 @@ export class PrincipalComponent implements OnInit {
         },
         err => console.error(err)
       )
+  }
+
+  public addCarro(producto: Producto) {
+    producto.cantCarro = 1;
+    console.log(producto)
+    this._cartService.addCarro(producto);
   }
 }

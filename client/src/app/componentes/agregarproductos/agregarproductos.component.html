@@ -1,70 +1,81 @@
 <div class="container">
-<div class="container-fluid">
-<div class="paneladmin shadow">
-<form id="productForm" >
-    <div class="row">
-        <div class="col-md-4">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1"><i class="far fa-keyboard"> </i></span>
-                    <input type="text" name=" nombre" [(ngModel)]="producto.nombre" class="form-control" id="nombre" placeholder="Nombre del producto" required>
+    <div class="container-fluid">
+        <div class="paneladmin shadow">
+            <form id="productForm">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><i class="far fa-keyboard"> </i></span>
+                            <input type="text" name=" nombre" [(ngModel)]="producto.nombre" class="form-control"
+                                id="nombre" placeholder="Nombre del producto" required>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon2"><i
+                                    class="fas fa-money-bill-wave"></i></span>
+                            <input type="number" class="form-control" name="precio" [(ngModel)]="producto.precio"
+                                id="precio" min="0" placeholder="Precio del producto" step="any" required>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon3"><i
+                                    class="fas fa-sort-amount-up-alt"></i></span>
+                            <input type="number" class="form-control" name="stock" [(ngModel)]="producto.stock"
+                                id="stock" min="0" placeholder="Existencias" step="any" required>
+                        </div>
+                    </div>
                 </div>
-        </div>
-        <div class="col-md-4">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon2"><i class="fas fa-money-bill-wave"></i></span>
-                <input type="number" class="form-control" name="precio" [(ngModel)]="producto.precio" id="precio" min="0" placeholder="Precio del producto" step="any" required>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon3"><i class="fas fa-sort-amount-up-alt"></i></span>
-                <input type="number" class="form-control" name="stock" [(ngModel)]="producto.stock" id="stock" min="0" placeholder="Existencias" step="any" required>
-            </div>
-        </div>
-    </div>
-    <br>
-    <div class="row">
-        <div class="col-md-4">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1"><i class="fa fa-bookmark-o"> </i></span>
-                <input type="text" name="categoria" [(ngModel)]="producto.categoria" class="form-control" id="categoria" placeholder="Categoria" required>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">¿Descuento?</span>
-                <input type="number" class="form-control" name="descuento" [(ngModel)]="producto.descuento" id="descuento" min="0" placeholder="descuento del producto hoy" step="any" required>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="input-group-prepend">
-                <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="imagen" >
-                    <label class="custom-file-label" for="validatedCustomFile">Elegir imagen...</label>
+                <br>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><i class="fa fa-bookmark-o"> </i></span>
+                            <input type="text" name="categoria" [(ngModel)]="producto.categoria" class="form-control"
+                                id="categoria" placeholder="Categoria" required>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">¿Descuento?</span>
+                            <input type="number" class="form-control" name="descuento" [(ngModel)]="producto.descuento"
+                                id="descuento" min="0" placeholder="descuento del producto hoy" step="any" required>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="input-group-prepend">
+                            <div class="custom-file">
+                                <input type="text" class="custom-file-input" id="imagen">
+                                <label class="custom-file-label" for="validatedCustomFile">Elegir imagen...</label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <div class="form-group" align="center">
+                            <label for="exampleFormControlTextarea1">Descripción del Producto:</label>
+                            <textarea class="form-control" name="descripcion" [(ngModel)]="producto.descripcion"
+                                id="descripcion" rows="1" placeholder="Sin descripción"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-2">
+                        <button class="btn btn-primary btn-block" type="button"><i class="fa fa-arrow-circle-left"
+                                aria-hidden="true"></i> Descartar</button>
+                    </div>
+                    <div class="col-md-2">
+                        <button (click)=" edit ? updateProducto() : guardarNuevoProducto()" id="guardar"
+                            class="btn btn-success btn-block"><i class="fa fa-floppy-o" aria-hidden="false"></i>
+                            Guardar</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
-    <br>
-    <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-6" >
-            <div class="form-group" align="center" >
-                <label for="exampleFormControlTextarea1">Descripción del Producto:</label>
-                <textarea class="form-control" name="descripcion" [(ngModel)]="producto.descripcion" id="descripcion" rows="1" placeholder="Sin descripción"></textarea>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-2">
-            <button class="btn btn-primary btn-block" type="button"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i>   Descartar</button>
-        </div>
-        <div class="col-md-2">
-            <button (click)=" edit ? updateProducto() : guardarNuevoProducto()" id="guardar" class="btn btn-success btn-block"><i class="fa fa-floppy-o" aria-hidden="false"></i>    Guardar</button>
-        </div>
-    </div>
-  </form>
-</div>
-</div>
 </div>

@@ -292,7 +292,7 @@
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
   <div class="logos">
-    <a href="/"><img src="..\assets\images\logo.png" alt="#" /></a>
+    <a routerLink=""><img src="..\assets\images\logo.png" alt="#" /></a>
   </div>
 
   <div class="col-xl-9 col-lg-9 col-md-8 col-sm-3">
@@ -315,12 +315,14 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="./logout">Usuario </a>
+          <li class="nav-item" >
+            <a class="nav-link" routerLink="./usuarios/list">Logout </a>
           </li>
           <li class="nav-item d_none">
             <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
           </li>
           <li class="nav-item d_none">
-            <!-- <a class="nav-link" href="#" routerLink="./carro"><i class="fas fa-shopping-cart"></i></a> -->
+            <a class="nav-link" href="#" routerLink="./carro"><i class="fas fa-shopping-cart"></i></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="./logout" data-toggle="tooltip" data-placement="down" title="Salir">

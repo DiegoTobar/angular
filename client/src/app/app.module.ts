@@ -10,9 +10,15 @@ import { UsuariosComponent } from './componentes/usuarios/usuarios.component';
 import { AgregarproductosComponent } from './componentes/agregarproductos/agregarproductos.component';
 import { AdminComponent } from './componentes/admin/admin.component';
 import { ProductosService } from './services/productos.service';
+
 import { PrincipalComponent } from './componentes/principal/principal.component';
 import { CarroComponent } from './componentes/carro/carro.component';
+import { DataTablesModule } from 'angular-datatables';
+import { UsuariosListComponent } from './componentes/usuarios-list/usuarios-list.component';
 
+
+import {UsuariosService} from './services/usuarios.service';
+import { LoginComponent } from './componentes/login/login.component';
 
 @NgModule({
   declarations: [
@@ -21,16 +27,23 @@ import { CarroComponent } from './componentes/carro/carro.component';
     UsuariosComponent,
     AgregarproductosComponent,
     AdminComponent,
+
     PrincipalComponent,
-    CarroComponent
+    CarroComponent,
+    UsuariosListComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    DataTablesModule
   ],
-  providers: [ ProductosService],
+  providers: [ 
+    ProductosService,
+    UsuariosService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

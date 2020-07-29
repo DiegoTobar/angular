@@ -4,13 +4,14 @@ import cors from 'cors';
 
 import indexRoutes from './routes/indexRoutes';
 import productosRoutes from './routes/productosRoutes';
+import userRegRoutes from './routes/userRegRoutes';
 
 class Server {
     
     public app: Application;
 
     constructor(){
-        this .app = express();
+        this.app = express();
         this.config();
         this.routes();
     }
@@ -26,6 +27,7 @@ class Server {
     routes(): void{
         this.app.use('/', indexRoutes);
         this.app.use('/productos', productosRoutes);
+        this.app.use('/user',userRegRoutes);
     }
 
     start(){

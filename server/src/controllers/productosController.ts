@@ -7,7 +7,7 @@ import pool from '../database';
 class ProductosController {
 
     public async list(req: Request, res: Response): Promise<void> {
-        const producto = await pool.query('SELECT categorias.nombre as categoria, descripcion, descuento, imagen, productos.nombre, precio, stock FROM productos join categorias on Categorias_idCategoria = idCategoria');
+        const producto = await pool.query('SELECT idArticulo, categorias.nombre as categoria, descripcion, descuento, imagen, productos.nombre, precio, stock FROM productos join categorias on Categorias_idCategoria = idCategoria');
         res.json(producto);
     }
 

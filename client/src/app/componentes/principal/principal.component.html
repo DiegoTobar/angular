@@ -21,17 +21,17 @@
                     <i class="far fa-trash-alt"></i>
                 </button>
             </div>
-            <div class="card-body" style="width: 12rem;">
+            <div class="card-body" style="width: 12rem; margin-bottom: 0rem;">
                 <img src="{{producto.imagen}}" class="card-img-top" style="box-sizing: content-box;">
                 <p>Categoria: {{ producto.categoria}}</p>
                 <p>Precio: {{ producto.precio}}</p>
                 <p>Disponibles: {{ producto.stock}}</p>
                 <p>{{producto.descripcion}} </p>
 
-                <div class="alert alert-light" role="alert">
-                    <a href="#" (click)="addCarro(producto)" class="btn btn-outline-success btn-block" id="carro">
-                        <i class="fas fa-cart-arrow-down"></i> Comprar</a>
-                </div>
+                <a href="#" (click)="addCarro(producto)" class="btn btn-outline-success btn-block" id="carro">
+                    <i class="fas fa-cart-arrow-down"></i> Comprar</a>
+                <a routerLink="./carro" class="btn btn-outline-warning btn-block" id="irCarro">
+                    Ver mi <i class="fas fa-shopping-cart"></i></a>
             </div>
             <!-- <app-cart *ngIf="openCart"></app-cart> -->
         </div>
