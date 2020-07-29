@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthGuard } from './guards/auth.guard';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,7 @@ import { AuthGuard } from './guards/auth.guard';
 export class AppComponent {
   title = 'tiendaonline';
 
-  constructor(public auth: AuthGuard){}
+  constructor(public auth: AuthService){}
   
   public openCart: boolean = false;
   public carro() { //Se usa para abrir o cerrar el carrito

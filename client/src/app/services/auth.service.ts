@@ -26,6 +26,7 @@ export class AuthService {
 
   loginUser(usuario: any): Observable<any> {
     const url = "http://localhost:3000/usuarios/login";
+    console.log(usuario)
     return this.http.post(url, usuario)
   }
 
@@ -34,7 +35,12 @@ export class AuthService {
   }
 
   getToken() {
-    this.cookies.get("token")
+    if(this.cookies.get("token") != ""){
+      return true;
+    }
+    else{
+      return false;
+    }
   }
   getUser(){
     return "Falta pogramar";
