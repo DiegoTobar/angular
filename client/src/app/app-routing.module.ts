@@ -8,6 +8,7 @@ import { AdminComponent} from "./componentes/admin/admin.component";
 import { PrincipalComponent } from "./componentes/principal/principal.component";
 import { CarroComponent} from "./componentes/carro/carro.component";
 import { LoginComponent } from "./componentes/login/login.component";
+import { CheckoutComponent} from "./componentes/checkout/checkout.component";
 import { from } from 'rxjs';
 
 import { UsuariosListComponent } from "./componentes/usuarios-list/usuarios-list.component";
@@ -26,8 +27,8 @@ const routes: Routes = [
   { path: "usuarios/list",component: UsuariosListComponent},
   { path: "usuarios/edit/:id",component: UsuariosComponent},
   { path: "usuarios/register",component: LoginComponent},
-  { path: "usuarios/login",component: LoginComponent}
-
+  { path: "usuarios/login",component: LoginComponent},
+  { path: "checkout", component: CheckoutComponent }
 ];
 
 @NgModule({
