@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  user: User= {
+  user: {
     cedula: 0,
     nombre: '',
     apellido: '',

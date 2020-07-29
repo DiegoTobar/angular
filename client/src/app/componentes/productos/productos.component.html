@@ -1,42 +1,50 @@
+
 <style>
-    /* .centro{
-        text-align:block;
-        align-items: block
-    }*/
-    .bgcolorheadercard{ 
-        background-color: purple;
-    }
-</style>
-
-<div class="container">
-    <div class="container-fluid">
-    
-<div class="row">
-    <div class="col-md-4"></div>
-    <div class="col-md-4">
-        <a href="#" routerLink="/productos/agregar"><button id="nuevoP" class="btn btn-success btn-block "><i class="fa fa-plus" aria-hidden="false"></i>   Nuevo Producto</button></a>
-    </div>
-</div>
-<br>
-<br>
-
-<div class="col-md-4" *ngFor="let producto of productos">
-    <div class="card text-center">
-        <div class="card-header bgcolorheadercard text-white d-flex justify-content-between align-items-center">
-            {{producto.nombre}}
-            <button class="btn btn-danger" (click)="borrarProducto(producto.idArticulo)">
-              <i class="far fa-trash-alt"></i>
-            </button>
-          </div>
-        <div class="card-body" style="width: 18rem;">
-            <img src="{{producto.imagen}}" class="card-img-top" style="box-sizing: content-box;">
-            <p>Referencia: {{ producto.referencia}}</p>
-            <p>Precio: {{ producto.precio}}</p>
-            <p>Unidades {{ producto.stock}}</p>
-            <p>{{producto.descripcion}} </p>
-            <a [routerLink]="['/productos/editar',producto.idArticulo]" id="editar" class="btn btn-warning btn-block"><i class="fa fa-floppy-o" aria-hidden="false"></i>    Editar</a>
-        </div>
-    </div>
-</div>
-</div>
-</div>
+    .previous {
+  float: left;
+  }
+  
+  .next {
+  float: right;
+  }
+  </style>
+  
+  <div class="col-md-6 container" >
+  
+  <div class="table-responsive-lg table-light">
+    <table class="table table-bordered table-hover ">
+      <thead>
+        <tr>
+          <th scope="col">idArticulo</th>
+          <th scope="col">categoria</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">descuento</th>
+          <th scope="col">stock</th>
+          <th scope="col">descripcion</th>
+      </tr>
+      </thead>
+      <tbody *ngFor="let producto of productos">
+        <tr>        
+          <td>{{ producto.idArticulo}}</td>
+          <td>{{ producto.nombre}}</td>
+          <td>{{ producto.precio}}</td>
+          <td>{{ producto.nombre}}</td>
+          <td>{{ producto.descuento}}</td>
+          <td>{{ producto.stock}}</td>
+          <td>
+            <div class="btn-group">
+            
+                    <button [routerLink]="['/usuarios/edit',producto.cedula]" type="button" class="btn btn-info "  ><i class="far fa-edit" aria-hidden="false"></i>Edit</button>
+                 
+                    <button type="button" class="btn btn-danger" (click)="deleteproducto(producto.cedula)" ><i class="far fa-trash-alt"></i></button>            
+            </div>    
+          </td>
+          
+          
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+  </div>

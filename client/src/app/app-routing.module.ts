@@ -16,16 +16,16 @@ import { UsuariosListComponent } from "./componentes/usuarios-list/usuarios-list
 const routes: Routes = [
   { path: "productos", component: ProductosComponent },
   { path: "productos/agregar", component: AgregarproductosComponent },
-  { path: "usuarios", component: UsuariosComponent },
+  { path: "usuarios", component: UsuariosListComponent },
   { path: "admin", component: AdminComponent },
   { path: "", component: PrincipalComponent },
   { path: "productos/editar/:idArticulo", component: AgregarproductosComponent},
-  { path: "carro", component: CarroComponent }
+  { path: "carro", component: CarroComponent },
   { path: "productos/editar/:idArticulo", component: AgregarproductosComponent},
 
   { path: "usuarios/list",component: UsuariosListComponent},
   { path: "usuarios/edit/:id",component: UsuariosComponent},
-  { path: "usuarios/register",component: LoginComponent},
+  { path: "usuario/registro",component: UsuariosComponent},
   { path: "usuarios/login",component: LoginComponent}
 
 ];

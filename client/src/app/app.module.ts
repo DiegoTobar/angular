@@ -19,6 +19,7 @@ import { UsuariosListComponent } from './componentes/usuarios-list/usuarios-list
 
 import {UsuariosService} from './services/usuarios.service';
 import { LoginComponent } from './componentes/login/login.component';
+import { ComprasService } from './services/compras.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { LoginComponent } from './componentes/login/login.component';
     AdminComponent,
 
     PrincipalComponent,
-    CarroComponent
+    CarroComponent,
     UsuariosListComponent,
     LoginComponent
   ],
@@ -42,7 +43,8 @@ import { LoginComponent } from './componentes/login/login.component';
   ],
   providers: [ 
     ProductosService,
-    UsuariosService
+    UsuariosService,
+    ComprasService
   ],
   bootstrap: [AppComponent]
 })

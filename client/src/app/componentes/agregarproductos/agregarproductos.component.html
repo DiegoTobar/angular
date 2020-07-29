@@ -38,10 +38,8 @@
         </div>
         <div class="col-md-4">
             <div class="input-group-prepend">
-                <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="imagen" >
-                    <label class="custom-file-label" for="validatedCustomFile">Elegir imagen...</label>
-                </div>
+                <span class="input-group-text" id="basic-addon1"><i class="fa fa-bookmark-o"> </i></span>
+                <input type="text" name="imagen" [(ngModel)]="producto.imagen" class="form-control" id="imagen" placeholder="imagen" required>
             </div>
         </div>
     </div>
