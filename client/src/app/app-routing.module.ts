@@ -18,25 +18,13 @@ import { UsuariosListComponent } from "./componentes/usuarios-list/usuarios-list
 const routes: Routes = [
   { path: "productos", component: ProductosComponent },
   { path: "productos/agregar", component: AgregarproductosComponent },
-<<<<<<< HEAD
   { path: "usuarios", component: UsuariosListComponent },
   { path: "admin", component: AdminComponent },
-=======
-  { path: "usuarios", component: UsuariosComponent },
-  { path: "admin", component: AdminComponent,},
->>>>>>> sebastian2
   { path: "", component: PrincipalComponent },
   { path: "productos/editar/:idArticulo", component: AgregarproductosComponent},
   { path: "carro", component: CarroComponent },
   { path: "productos/editar/:idArticulo", component: AgregarproductosComponent},
 
-<<<<<<< HEAD
-  { path: "usuarios/list",component: UsuariosListComponent},
-  { path: "usuarios/edit/:id",component: UsuariosComponent},
-  { path: "usuario/registro",component: UsuariosComponent},
-  { path: "usuarios/login",component: LoginComponent}
-
-=======
   { path: "login", component: LoginComponent, pathMatch: "full" },
   { path: "registro", component: RegistrarComponent, pathMatch: "full" }
   // { path: "**", component: Page404Component }
@@ -45,7 +33,6 @@ const routes: Routes = [
   // { path: "usuarios/register",component: LoginComponent},
   // { path: "usuarios/login",component: LoginComponent},
   // { path: "checkout", component: CheckoutComponent }
->>>>>>> sebastian2
 ];
 
 @NgModule({
