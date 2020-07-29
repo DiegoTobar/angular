@@ -47,6 +47,8 @@ class UserRegController {
     login(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { correo, contra } = req.body;
+            console.log(correo);
+            console.log(contra);
             const users = yield database_1.default.query('SELECT * FROM usuarios WHERE correo = ? AND contrasena = ? ', [correo, contra]);
             if (users.length == 1) {
                 console.log("users");

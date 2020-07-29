@@ -1,29 +1,29 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ProductosComponent } from "./componentes/productos/productos.component"; 
+import { ProductosComponent } from "./componentes/productos/productos.component";
 import { UsuariosComponent } from "./componentes/usuarios/usuarios.component";
 import { AgregarproductosComponent } from "./componentes/agregarproductos/agregarproductos.component";
-import { AdminComponent} from "./componentes/admin/admin.component";
+import { AdminComponent } from "./componentes/admin/admin.component";
 import { PrincipalComponent } from "./componentes/principal/principal.component";
-import { CarroComponent} from "./componentes/carro/carro.component";
+import { CarroComponent } from "./componentes/carro/carro.component";
 import { LoginComponent } from "./componentes/login/login.component";
-import { RegistrarComponent} from "./componentes/registrar/registrar.component"
+import { RegistrarComponent } from "./componentes/registrar/registrar.component"
 import { from } from 'rxjs';
-import { AuthGuard} from './guards/auth.guard'
+import { AuthGuard } from './guards/auth.guard'
 
 import { UsuariosListComponent } from "./componentes/usuarios-list/usuarios-list.component";
 
 
 const routes: Routes = [
-  { path: "productos", component: ProductosComponent },
-  { path: "productos/agregar", component: AgregarproductosComponent },
-  { path: "usuarios", component: UsuariosComponent },
-  { path: "admin", component: AdminComponent,},
+  { path: "productos", component: ProductosComponent , canActivate: [AuthGuard]},
+  { path: "productos/agregar", component: AgregarproductosComponent , canActivate: [AuthGuard]},
+  { path: "usuarios", component: UsuariosComponent , canActivate: [AuthGuard]},
+  { path: "admin", component: AdminComponent, canActivate: [AuthGuard] },
   { path: "", component: PrincipalComponent },
-  { path: "productos/editar/:idArticulo", component: AgregarproductosComponent},
-  { path: "carro", component: CarroComponent },
-  { path: "productos/editar/:idArticulo", component: AgregarproductosComponent},
+  { path: "productos/editar/:idArticulo", component: AgregarproductosComponent, canActivate: [AuthGuard] },
+  { path: "carro", component: CarroComponent , canActivate: [AuthGuard]},
+  { path: "productos/editar/:idArticulo", component: AgregarproductosComponent , canActivate: [AuthGuard]},
 
   { path: "login", component: LoginComponent, pathMatch: "full" },
   { path: "registro", component: RegistrarComponent, pathMatch: "full" }

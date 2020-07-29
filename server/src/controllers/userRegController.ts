@@ -34,6 +34,8 @@ class UserRegController {
 
     public async login(req: Request, res: Response) {
         const { correo, contra } = req.body;
+        console.log(correo);
+        console.log(contra);
         const users = await pool.query('SELECT * FROM usuarios WHERE correo = ? AND contrasena = ? ', [correo, contra]);
         
         if (users.length == 1) {console.log("users");console.log(users);

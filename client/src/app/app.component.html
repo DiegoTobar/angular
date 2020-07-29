@@ -305,18 +305,19 @@
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
             <!-- class="nav-item active" -->
-            <a class="nav-link" routerLink="./admin" *ngIf="!auth.canActivate()" class="nav-link"><i class="fas fa-home"></i> Admin</a>
+            <a class="nav-link" routerLink="./admin" *ngIf="auth.getToken()" class="nav-link"><i
+                class="fas fa-home"></i> Admin</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" *ngIf="!auth.canActivate()" routerLink="./productos"><i
+            <a class="nav-link" href="#" *ngIf="auth.getToken()" routerLink="./productos"><i
                 class="fas fa-box-open"></i> Productos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" *ngIf="!auth.canActivate()" routerLink="./usuarios"><i
+            <a class="nav-link" href="#" *ngIf="auth.getToken()" routerLink="./usuarios"><i
                 class="fas fa-users-cog"></i> Usuarios</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" *ngIf="auth.canActivate()" routerLink="./login">Ingresar </a>
+            <a class="nav-link" *ngIf="!auth.getToken()" routerLink="./login">Ingresar </a>
           <li class="nav-item d_none">
             <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
           </li>
@@ -324,8 +325,7 @@
             <a class="nav-link" href="#" routerLink="./carro"><i class="fas fa-shopping-cart"></i></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" *ngIf="!auth.canActivate()" routerLink="./logout" data-toggle="tooltip"
-              data-placement="down" title="Salir">
+            <a class="nav-link" *ngIf="auth.getToken()"  routerLink="./logout" data-toggle="tooltip" data-placement="down" title="Salir">
               <i class="fas fa-sign-out-alt"></i></a>
           </li>
         </ul>

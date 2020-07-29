@@ -17,7 +17,6 @@ export class LoginComponent {
   login() {
     const user = { correo: this.correo, contra: this.contra };
     this.auth.loginUser(user).subscribe(data => {
-      console.log(data);
       this.auth.setToken(data.token);
       this.router.navigateByUrl('/');
     },
@@ -29,9 +28,7 @@ export class LoginComponent {
     // if(console.error == 403)alert("Usuario o contraseña Incorrectos");
   }
   token(){
-    this.auth.getUserLogged().subscribe(data => {
-      console.log(data);
-    });
+    console.log(this.auth.getToken());
   }
 
 }
