@@ -14,26 +14,17 @@ import { AuthGuard } from './guards/auth.guard'
 
 import { UsuariosListComponent } from "./componentes/usuarios-list/usuarios-list.component";
 
-
 const routes: Routes = [
-<<<<<<< HEAD
   { path: "productos", component: ProductosComponent , canActivate: [AuthGuard]},
   { path: "productos/agregar", component: AgregarproductosComponent , canActivate: [AuthGuard]},
   { path: "usuarios", component: UsuariosComponent , canActivate: [AuthGuard]},
   { path: "admin", component: AdminComponent, canActivate: [AuthGuard] },
-=======
   { path: "productos", component: ProductosComponent },
   { path: "productos/agregar", component: AgregarproductosComponent },
   { path: "usuarios", component: UsuariosListComponent },
   { path: "admin", component: AdminComponent },
-<<<<<<< HEAD
-=======
-=======
   { path: "usuarios", component: UsuariosComponent },
   { path: "admin", component: AdminComponent,},
->>>>>>> sebastian2
->>>>>>> master
->>>>>>> 3c900e8952cb39946bbb7e022628e02a202d33b5
   { path: "", component: PrincipalComponent },
   { path: "productos/editar/:idArticulo", component: AgregarproductosComponent, canActivate: [AuthGuard] },
   { path: "carro", component: CarroComponent , canActivate: [AuthGuard]},
