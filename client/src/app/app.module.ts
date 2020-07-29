@@ -16,10 +16,9 @@ import { CarroComponent } from './componentes/carro/carro.component';
 import { DataTablesModule } from 'angular-datatables';
 import { UsuariosListComponent } from './componentes/usuarios-list/usuarios-list.component';
 
-import { CheckoutComponent } from './componentes/checkout/checkout.component';
-
-import {UsuariosService} from './services/usuarios.service';
+import { UsuariosService } from './services/usuarios.service';
 import { LoginComponent } from './componentes/login/login.component';
+import { RegistrarComponent } from './componentes/registrar/registrar.component';
 
 @NgModule({
   declarations: [
@@ -28,12 +27,11 @@ import { LoginComponent } from './componentes/login/login.component';
     UsuariosComponent,
     AgregarproductosComponent,
     AdminComponent,
-
     PrincipalComponent,
     CarroComponent,
     UsuariosListComponent,
     LoginComponent,
-    CheckoutComponent
+    RegistrarComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +40,7 @@ import { LoginComponent } from './componentes/login/login.component';
     FormsModule,
     DataTablesModule
   ],
-  providers: [ 
+  providers: [
     ProductosService,
     UsuariosService
   ],
