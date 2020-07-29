@@ -27,7 +27,7 @@ class Server {
     routes(): void{
         this.app.use('/', indexRoutes);
         this.app.use('/productos', productosRoutes);
-        this.app.use('/user',userRegRoutes);
+        this.app.use('/usuarios',userRegRoutes);
     }
 
     start(){

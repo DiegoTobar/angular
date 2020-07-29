@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../services/auth.service'
 
 @Component({
   selector: 'app-registrar',
@@ -9,9 +10,16 @@ export class RegistrarComponent {
   correo: string;
   contra: string;
   confirmContra: string;
-  constructor() { }
+  telefono: string;
+  nombre: string;
+  apellido: string;
+  
+  constructor(public auth: AuthService) { }
 
-  registrar(){
-    console.log(this.correo)
+  registrar() {
+    const user = { correo: this.correo, contra: this.contra };
+    this.auth.regUser(user).subscribe(data => {
+      console.log(data);
+    });
   }
 }

@@ -20,6 +20,8 @@ import { UsuariosService } from './services/usuarios.service';
 import { LoginComponent } from './componentes/login/login.component';
 import { RegistrarComponent } from './componentes/registrar/registrar.component';
 
+import { CookieService } from 'ngx-cookie-service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +44,8 @@ import { RegistrarComponent } from './componentes/registrar/registrar.component'
   ],
   providers: [
     ProductosService,
-    UsuariosService
+    UsuariosService, 
+    CookieService
   ],
   bootstrap: [AppComponent]
 })

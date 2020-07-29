@@ -1,8 +1,28 @@
 <div class="container">
-    <form class="custom-form" method="post">
-        <h1>Login</h1>
-        <input type="email" [(ngModel)]="correo" name="correo" placeholder="Correo" required="required" />
-        <input type="password" [(ngModel)]="contra" name="contra" placeholder="Contraseña" required="required" />
-        <button type="submit" (click)="login()">Ingresar</button>
-    </form>
+    <div class="container">
+        <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
+            <div class="card_register">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <form #formLogin="ngForm" (ngSubmit)="login()">
+                            <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+                            <div class="form-group">
+                                <input type="email" class="form-control" [(ngModel)]="correo" name="correo"
+                                    placeholder="Correo" required="required" />
+                            </div>
+                            <div class="form-group"> <input class="form-control" type="password" [(ngModel)]="contra"
+                                    name="contra" placeholder="Contraseña" required="required" />
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
+                            <br>
+                            <div class="form-group">
+                                <a routerLink="/registro" class="form-control reg-user">Crear una cuenta</a>
+                            </div>
+                        </form><button (click)="token()" class="btn btn-primary btn-block">token</button>
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

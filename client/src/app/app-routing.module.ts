@@ -10,6 +10,7 @@ import { CarroComponent} from "./componentes/carro/carro.component";
 import { LoginComponent } from "./componentes/login/login.component";
 import { RegistrarComponent} from "./componentes/registrar/registrar.component"
 import { from } from 'rxjs';
+import { AuthGuard} from './guards/auth.guard'
 
 import { UsuariosListComponent } from "./componentes/usuarios-list/usuarios-list.component";
 
@@ -18,7 +19,7 @@ const routes: Routes = [
   { path: "productos", component: ProductosComponent },
   { path: "productos/agregar", component: AgregarproductosComponent },
   { path: "usuarios", component: UsuariosComponent },
-  { path: "admin", component: AdminComponent },
+  { path: "admin", component: AdminComponent,},
   { path: "", component: PrincipalComponent },
   { path: "productos/editar/:idArticulo", component: AgregarproductosComponent},
   { path: "carro", component: CarroComponent },
@@ -26,6 +27,7 @@ const routes: Routes = [
 
   { path: "login", component: LoginComponent, pathMatch: "full" },
   { path: "registro", component: RegistrarComponent, pathMatch: "full" }
+  // { path: "**", component: Page404Component }
   // { path: "usuarios/list",component: UsuariosListComponent},
   // { path: "usuarios/edit/:id",component: UsuariosComponent},
   // { path: "usuarios/register",component: LoginComponent},
