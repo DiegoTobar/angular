@@ -44,6 +44,7 @@
                 (click)="less(item)">
                 <i class="fas fa-minus-circle"></i></button></div>
             <div class="col-md-4"> {{ item.cantCarro }} </div>
+            <script> console.log(item.cantidad)</script>
             <div class="col-md-4">
               <button type="button" class="btn btn-outline-success ml-4 btn-sm" style="border: 0px;"
                 (click)="add(item)">
@@ -61,6 +62,9 @@
     ${{facturaTotal}}</div>
   <div class="row">
     <div class="col">
+
+      <div class="float-right"><button type="button"  (click)="guardarNuevaCompra()" class="btn btn-success">Continuar con la Compra <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></div>
+
       <a href="#" class="btn btn-success btn-xs pull-right" data-toggle="modal" data-target="#bookmarkModal">
         Finalizar la Compra <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
       </a>

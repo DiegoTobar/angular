@@ -16,15 +16,34 @@ import { UsuariosListComponent } from "./componentes/usuarios-list/usuarios-list
 
 
 const routes: Routes = [
+<<<<<<< HEAD
   { path: "productos", component: ProductosComponent , canActivate: [AuthGuard]},
   { path: "productos/agregar", component: AgregarproductosComponent , canActivate: [AuthGuard]},
   { path: "usuarios", component: UsuariosComponent , canActivate: [AuthGuard]},
   { path: "admin", component: AdminComponent, canActivate: [AuthGuard] },
+=======
+  { path: "productos", component: ProductosComponent },
+  { path: "productos/agregar", component: AgregarproductosComponent },
+<<<<<<< HEAD
+  { path: "usuarios", component: UsuariosListComponent },
+  { path: "admin", component: AdminComponent },
+=======
+  { path: "usuarios", component: UsuariosComponent },
+  { path: "admin", component: AdminComponent,},
+>>>>>>> sebastian2
+>>>>>>> master
   { path: "", component: PrincipalComponent },
   { path: "productos/editar/:idArticulo", component: AgregarproductosComponent, canActivate: [AuthGuard] },
   { path: "carro", component: CarroComponent , canActivate: [AuthGuard]},
   { path: "productos/editar/:idArticulo", component: AgregarproductosComponent , canActivate: [AuthGuard]},
 
+<<<<<<< HEAD
+  { path: "usuarios/list",component: UsuariosListComponent},
+  { path: "usuarios/edit/:id",component: UsuariosComponent},
+  { path: "usuario/registro",component: UsuariosComponent},
+  { path: "usuarios/login",component: LoginComponent}
+
+=======
   { path: "login", component: LoginComponent, pathMatch: "full" },
   { path: "registro", component: RegistrarComponent, pathMatch: "full" }
   // { path: "**", component: Page404Component }
@@ -33,6 +52,7 @@ const routes: Routes = [
   // { path: "usuarios/register",component: LoginComponent},
   // { path: "usuarios/login",component: LoginComponent},
   // { path: "checkout", component: CheckoutComponent }
+>>>>>>> sebastian2
 ];
 
 @NgModule({

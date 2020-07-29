@@ -313,11 +313,29 @@
                 class="fas fa-box-open"></i> Productos</a>
           </li>
           <li class="nav-item">
+<<<<<<< HEAD
             <a class="nav-link" href="#" *ngIf="auth.getToken()" routerLink="./usuarios"><i
                 class="fas fa-users-cog"></i> Usuarios</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" *ngIf="!auth.getToken()" routerLink="./login">Ingresar </a>
+=======
+<<<<<<< HEAD
+            <a class="nav-link" href="#" routerLink="./usuarios/list"><i class="fas fa-users-cog"></i> Usuarios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="./usuario/registro">Usuario </a>
+          <li class="nav-item" >
+            <a class="nav-link" routerLink="./usuarios/list">Logout </a>
+          </li>
+=======
+            <a class="nav-link" href="#" *ngIf="!auth.canActivate()" routerLink="./usuarios"><i
+                class="fas fa-users-cog"></i> Usuarios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="auth.canActivate()" routerLink="./login">Ingresar </a>
+>>>>>>> sebastian2
+>>>>>>> master
           <li class="nav-item d_none">
             <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
           </li>

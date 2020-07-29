@@ -9,8 +9,19 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
 
+
+  user: {
+    cedula: 0,
+    nombre: '',
+    apellido: '',
+    correo: '',
+    contrasena: '',
+    rol: 0,
+    telefono:''
+  };
   correo: string;
   contra: string;
+
 
   constructor(public auth: AuthService, public router: Router) { }
 

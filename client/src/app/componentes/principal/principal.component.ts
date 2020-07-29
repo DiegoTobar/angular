@@ -28,8 +28,10 @@ export class PrincipalComponent implements OnInit {
       );
   }
   borrarProducto(id: string) {
+    if( confirm ('Desea borrar este produto')){
     this.productosService.deleteProducto(id)
       .subscribe(
+       
         res => {
           console.log(res);
           this.imprimir = 'hola:${{id}}';
@@ -37,6 +39,7 @@ export class PrincipalComponent implements OnInit {
         },
         err => console.error(err)
       )
+      }
   }
 
   public addCarro(producto: Producto) {

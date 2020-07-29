@@ -18,9 +18,13 @@ import { UsuariosListComponent } from './componentes/usuarios-list/usuarios-list
 
 import { UsuariosService } from './services/usuarios.service';
 import { LoginComponent } from './componentes/login/login.component';
+<<<<<<< HEAD
+import { ComprasService } from './services/compras.service';
+=======
 import { RegistrarComponent } from './componentes/registrar/registrar.component';
 
 import { CookieService } from 'ngx-cookie-service';
+>>>>>>> sebastian2
 
 @NgModule({
   declarations: [
@@ -44,8 +48,13 @@ import { CookieService } from 'ngx-cookie-service';
   ],
   providers: [
     ProductosService,
+<<<<<<< HEAD
+    UsuariosService,
+    ComprasService
+=======
     UsuariosService, 
     CookieService
+>>>>>>> sebastian2
   ],
   bootstrap: [AppComponent]
 })
